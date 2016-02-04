@@ -183,6 +183,7 @@ void* merge(void* args){
 //./a.out 2 /Users/wangzhishang/sourse/data/
 int	main(int argc, char *argv[]){
 	if (argc < 3) exit(1);
+	//threads num
 	numthreads = atoi(argv[1]);
 	threads = (pthread_t *) malloc(sizeof(pthread_t)*numthreads);
 	long i;
@@ -191,6 +192,7 @@ int	main(int argc, char *argv[]){
 	filenames = (char **) malloc(sizeof(char *)*100);
 	DIR *d;
 	struct dirent *entry;
+	//directroy url
 	directory = argv[2];
 	d = opendir(directory);
 	while((entry = readdir(d)))	{
